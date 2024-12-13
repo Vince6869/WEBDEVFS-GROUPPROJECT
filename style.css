@@ -11,6 +11,12 @@ body {
   color: #ece8e1; /* Light gray text for readability */
   line-height: 1.6;
   padding-top: 60px; /* Space for fixed navbar */
+  background-image: url('background-pattern.png'); /* Valorant-themed background */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center; /* Ensure background is centered */
+  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Navbar */
@@ -19,10 +25,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #1c252e; /* Slightly lighter dark for navbar */
+  background: linear-gradient(135deg, #1c252e, #0f1923);
   padding: 10px 0;
   z-index: 1000;
   border-bottom: 3px solid #ff4655; /* Valorant red accent */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .navbar ul {
@@ -44,6 +51,7 @@ body {
   padding: 10px 15px;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.3s;
+  border: 2px solid transparent;
 }
 
 .navbar a:hover,
@@ -52,6 +60,7 @@ body {
   color: #fff;
   transform: scale(1.1); /* Slight zoom effect on hover */
   border-radius: 4px;
+  border: 2px solid #ece8e1;
 }
 
 /* Page Header */
@@ -61,16 +70,23 @@ body {
   background: linear-gradient(135deg, #ff4655, #0f1923); /* Valorant gradient */
   color: #ece8e1;
   border-bottom: 3px solid #ff4655;
+  background-image: url('header-pattern.png'); /* Hero pattern */
+  background-blend-mode: overlay;
+  background-size: cover; /* Ensure background image covers the section */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
 }
 
 .page-header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 10px;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Adding shadow for more depth */
+  color: #ff4655;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .page-header p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
@@ -84,6 +100,7 @@ body {
   bottom: 0;
   width: 100%;
   border-top: 3px solid #ff4655;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .footer p {
@@ -95,8 +112,11 @@ body {
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background: #1a222c; /* Darker background for sections */
-  border-radius: 10px;
+  background: rgba(26, 34, 44, 0.9); /* Semi-transparent background */
+  border-radius: 15px;
+  border: 2px solid #ff4655;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px); /* Adds blur effect */
 }
 
 #weapons-header {
@@ -129,16 +149,20 @@ body {
 
 .gun-item {
   background-color: #10171f;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 15px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .gun-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 15px rgba(255, 70, 85, 0.6); /* Red glow effect */
+  border: 2px solid #ff4655;
+  filter: brightness(1.1); /* Brighten on hover */
 }
 
 .gun-item img {
@@ -146,40 +170,54 @@ body {
   max-width: 160px;
   height: auto;
   margin-bottom: 10px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .gun-item img:hover {
   opacity: 0.8;
+  transform: scale(1.05); /* Zoom effect on image hover */
+}
+
+/* Label and Hover Effects for Weapons */
+label {
+  cursor: default; /* Disable pointer cursor */
+  transition: transform 0.3s ease;
+  pointer-events: none; /* Disable all interactions with the label */
+}
+
+/* Gun description on hover */
+.gun-item:hover .gun-description {
+  display: block; /* Show description when hovered */
 }
 
 .gun-description {
   display: none;
-}
-
-.gun-item input[type="checkbox"]:checked + label + .gun-description {
-  display: block;
-  background-color: #1c252e;
-  color: #ece8e1;
-  padding: 15px;
   margin-top: 10px;
-  border-top: 2px solid #ff4655;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-label {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-label:hover {
-  transform: scale(1.05);
+  color: #ece8e1;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 6px;
+  text-align: left;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease;
 }
 
 /* Agent Category Section */
+.agent-category {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(26, 34, 44, 0.9); /* Semi-transparent background */
+  border-radius: 15px;
+  border: 2px solid #ff4655;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
 .agent-category h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
   color: #ff4655;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -187,7 +225,7 @@ label:hover {
 
 .agent-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
   gap: 20px;
 }
 
@@ -198,12 +236,14 @@ label:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .agent-item img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: cover; /* Ensure image fills the container */
 }
 
 .agent-item p {
@@ -217,78 +257,83 @@ label:hover {
 .agent-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 15px rgba(255, 70, 85, 0.5); /* Red shadow on hover */
+  border: 2px solid #ff4655;
 }
 
 /* Map Section */
 .map-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  display: grid; /* Grid layout for clean arrangement */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive landscape cards */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the grid */
+  padding: 20px;
 }
 
 .map-card {
-  background-color: #10171f;
-  border-radius: 8px;
+  background-color: #1c1c28; /* Dark background */
+  border: 2px solid #ff4655; /* Valorant red border */
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  text-align: center;
   cursor: pointer;
+}
+
+.map-card:hover {
+  transform: scale(1.1); /* Make the card larger on hover */
+  box-shadow: 0 10px 30px rgba(255, 70, 85, 0.8); /* Add glow effect */
+  background-color: #252535; /* Slightly lighter for focus */
 }
 
 .map-card img {
   width: 100%;
-  height: 180px;
+  height: 180px; /* Fixed height for consistent layout */
   object-fit: cover;
+  border-bottom: 2px solid #ff4655;
 }
 
 .map-details {
   padding: 15px;
-  text-align: center;
-  background-color: #1c252e;
+  color: #fff;
 }
 
 .map-details h2 {
-  font-size: 1.4rem;
+  margin: 10px 0;
+  font-size: 1.5em;
+  font-family: 'Russo One', sans-serif;
   color: #ff4655;
-  margin-bottom: 10px;
 }
 
 .map-details p {
-  font-size: 1rem;
-  color: #ece8e1;
+  font-size: 0.95em;
+  font-family: 'Roboto', sans-serif;
+  color: #c0c0c0;
+  line-height: 1.5;
 }
 
-.map-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(255, 70, 85, 0.5); /* Neon glow on hover */
-}
-
-/* Responsiveness */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .navbar li {  
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .navbar a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
   .page-header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .page-header p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
+  .gun-list,
+  .agent-list,
   .map-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .gun-list {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .map-container {
-    grid-template-columns: 1fr;
   }
 }
