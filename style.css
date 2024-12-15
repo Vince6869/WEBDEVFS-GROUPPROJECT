@@ -7,14 +7,14 @@
 }
 
 body {
-  background-color: #0f1923; /* Valorant dark background */
-  color: #ece8e1; /* Light gray text for readability */
+  background-color: #121212; /* Dark background for Valorant vibe */
+  color: #f1f1f1; /* Light gray text */
   line-height: 1.6;
   padding-top: 60px; /* Space for fixed navbar */
-  background-image: url('background-pattern.png'); /* Valorant-themed background */
+  background-image: url('valorant-bg.jpg'); /* Valorant-themed background */
   background-size: cover;
   background-attachment: fixed;
-  background-position: center center; /* Ensure background is centered */
+  background-position: center center; /* Center the background */
   height: 100vh;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -25,11 +25,18 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, #1c252e, #0f1923);
+  background: rgba(0, 0, 0, 0.8); /* Dark background for navbar */
   padding: 10px 0;
   z-index: 1000;
   border-bottom: 3px solid #ff4655; /* Valorant red accent */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-logo {
+  max-height: 50px;
+  max-width: 400px;
+  display: inline-block;
+  margin-right: 10px; /* Space between the logo and navbar items */
 }
 
 .navbar ul {
@@ -58,7 +65,7 @@ body {
 .navbar .active {
   background-color: #ff4655; /* Valorant neon red for hover */
   color: #fff;
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1); /* Slight zoom effect */
   border-radius: 4px;
   border: 2px solid #ece8e1;
 }
@@ -72,7 +79,7 @@ body {
   border-bottom: 3px solid #ff4655;
   background-image: url('header-pattern.png'); /* Hero pattern */
   background-blend-mode: overlay;
-  background-size: cover; /* Ensure background image covers the section */
+  background-size: cover;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -116,7 +123,7 @@ body {
   border-radius: 15px;
   border: 2px solid #ff4655;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px); /* Adds blur effect */
+  backdrop-filter: blur(10px);
 }
 
 #weapons-header {
@@ -182,12 +189,11 @@ body {
 label {
   cursor: default; /* Disable pointer cursor */
   transition: transform 0.3s ease;
-  pointer-events: none; /* Disable all interactions with the label */
+  pointer-events: none;
 }
 
-/* Gun description on hover */
 .gun-item:hover .gun-description {
-  display: block; /* Show description when hovered */
+  display: block;
 }
 
 .gun-description {
@@ -207,7 +213,7 @@ label {
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(26, 34, 44, 0.9); /* Semi-transparent background */
+  background: rgba(26, 34, 44, 0.9);
   border-radius: 15px;
   border: 2px solid #ff4655;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
@@ -225,7 +231,7 @@ label {
 
 .agent-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -243,7 +249,7 @@ label {
 .agent-item img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensure image fills the container */
+  object-fit: cover;
 }
 
 .agent-item p {
@@ -256,22 +262,92 @@ label {
 
 .agent-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(255, 70, 85, 0.5); /* Red shadow on hover */
+  box-shadow: 0 6px 15px rgba(255, 70, 85, 0.5);
   border: 2px solid #ff4655;
+}
+
+/* Community Page Specific Styles */
+#community-page {
+  background-color: #121212;
+  background-size: cover;
+  padding: 80px 20px;
+  color: #ff4655;
+}
+
+#community-page h1 {
+  font-size: 3rem;
+  color: #ff4655;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#community-page p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+
+  font-weight: 300;
+}
+/* Section Styles */
+.community-section {
+  margin-bottom: 40px;
+  background-color: rgba(28, 37, 46, 0.9); /* Darker, semi-transparent background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.community-section h2 {
+  font-size: 2.2rem;
+  color: #ff4655;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.community-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.community-section li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.community-section a {
+  color: #ff4655;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.community-section a:hover {
+  color: #e0e0e0;
+}
+
+/* Footer Styling */
+.community-footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Map Section */
 .map-container {
-  display: grid; /* Grid layout for clean arrangement */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive landscape cards */
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center the grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
   padding: 20px;
 }
 
 .map-card {
-  background-color: #1c1c28; /* Dark background */
-  border: 2px solid #ff4655; /* Valorant red border */
+  background-color: #1c1c28;
+  border: 2px solid #ff4655;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
@@ -280,14 +356,14 @@ label {
 }
 
 .map-card:hover {
-  transform: scale(1.1); /* Make the card larger on hover */
-  box-shadow: 0 10px 30px rgba(255, 70, 85, 0.8); /* Add glow effect */
-  background-color: #252535; /* Slightly lighter for focus */
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 70, 85, 0.8);
+  background-color: #252535;
 }
 
 .map-card img {
   width: 100%;
-  height: 180px; /* Fixed height for consistent layout */
+  height: 180px;
   object-fit: cover;
   border-bottom: 2px solid #ff4655;
 }
@@ -311,29 +387,107 @@ label {
   line-height: 1.5;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .navbar li {  
-    display: block;
-    margin-bottom: 10px;
-  }
+/* Contact Profile Section */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
 
-  .navbar a {
-    padding: 10px;
-    font-size: 16px;
-  }
+.profile-card {
+  background-color: #10171f;
+  border: 2px solid #ff4655;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  max-width: 400px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .page-header h1 {
-    font-size: 2.5rem;
-  }
+.profile-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 70, 85, 0.8);
+}
 
-  .page-header p {
-    font-size: 1.2rem;
-  }
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ff4655;
+  margin-bottom: 15px;
+}
 
-  .gun-list,
-  .agent-list,
-  .map-container {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
+.profile-card h3 {
+  color: #ff4655;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  color: #ece8e1;
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #ff4655;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ece8e1;
+}
+
+.social-links a {
+  color: #ff4655;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ece8e1;
+}
+
+
+/* Card Styles */
+.card {
+  background-color: #1c252e;
+  border: 2px solid #ff4655;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 70, 85, 0.8);
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 2px solid #ff4655;
+}
+
+.card h3 {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #ece8e1;
+  background-color: #10171f;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }

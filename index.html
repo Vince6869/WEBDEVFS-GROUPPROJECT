@@ -3,62 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALORANT</title>
-    <!-- Favicon Link -->
+    <title>VALORANT Wiki</title>
+    <!-- Favicon -->
     <link rel="icon" href="images/valo logo.webp" type="image/webp">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
+        <!-- Navbar -->
         <nav class="navbar">
-            <a href="contactus.html" class="logo">
-                <img src="images/valo-logo.webp" alt="VALORANT Logo">
-            </a>
+            <!-- Clickable Logo -->
+
             <ul>
-                 <li><a href="index.html"class="active">Home</a></li>
-                 <li><a href="maps.html">Maps</a></li> 
-                 <li><a href="gameplay.html">Game Modes</a></li>
-                 <li><a href="weapons.html">Weapons</a></li>
-                 <li><a href="agents.html">Agents</a></li>
-                 <li><a href="community.html">Community</a></li>
+                <a href="index.html" class="navbar-logo">
+                <img src="images/valo logo.webp" alt="VALORANT Logo" class="navbar-logo">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="gameplay.html">Game Modes</a></li>
+                <li><a href="weapons.html">Weapons</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="community.html">Community</a></li>
             </ul>
         </nav>
+
+        <!-- Page Header -->
         <div class="page-header">
             <h1>Welcome to the VALORANT Wiki</h1>
             <p>Your ultimate guide to Riot Games' tactical shooter</p>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <div id="weapons-container">
+        
+        <!-- Content Grid -->
+        <section id="weapons-container">
             <h2 id="weapons-header">Explore VALORANT</h2>
             <div class="grid">
+                <!-- Agents Card -->
                 <div class="card">
-                    <img src="https://via.placeholder.com/200" alt="Agents">
-                    <h3>Agents</h3>
+                    <a href="agents.html">
+                        <img src="images/all agents.png"alt="Agents" class="card-img">
+                        <h3>Agents</h3>
+                    </a>
                 </div>
+                <!-- Weapons Card -->
                 <div class="card">
-                    <img src="https://via.placeholder.com/200" alt="Weapons">
-                    <h3>Weapons</h3>
+                    <a href="weapons.html">
+                        <img src="weapons/all weapons.webp" alt="Weapons" class="card-img">
+                        <h3>Weapons</h3>
+                    </a>
                 </div>
+                <!-- Maps Card -->
                 <div class="card">
-                    <img src="https://via.placeholder.com/200" alt="Maps">
-                    <h3>Maps</h3>
+                    <a href="maps.html">
+                        <img src="maps/all maps.webp" alt="Maps" class="card-img">
+                        <h3>Maps</h3>
+                    </a>
                 </div>
+                <!-- Game Modes Card -->
                 <div class="card">
-                    <img src="images/gamemodeslogo.avif" alt="Game Modes">
-                    <h3>Game Modes</h3>
+                    <a href="gameplay.html">
+                        <img src="images/all gamemodes.webp" alt="Game Modes" class="card-img">
+                        <h3>Game Modes</h3>
+                    </a>
                 </div>
+                <!-- Weapon Skins Card -->
                 <div class="card">
-                    <img src="https://via.placeholder.com/200" alt="Weapon Skins">
-                    <h3>Weapon Skins</h3>
+                    <a href="https://valorant.fandom.com/wiki/Weapon_Skins">
+                        <img src="weapons/all skins.webp" alt="Weapon Skins" class="card-img">
+                        <h3>Weapon Skins</h3>
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
+<!-- Contact Us Section -->
+<section id="contact" class="community-section">
+    <h2>Contact Us</h2>
+    <div class="profile-container">
+      <div class="profile-card">
+        <img src="images/MYPFP.jpg" alt="Profile Picture" class="profile-img">
+        <h3>John Doe</h3>
+        <p>Website Administrator</p>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:vincejario@.com">vincejario@.com</a></p>
+          <p>Phone: +1 234 567 890</a></p>
+        </div>
+        <div class="social-links">
+          <a href="https://web.facebook.com/spec.quite" target="_blank">Facebook</a> |
+          <a href="https://www.instagram.com/nalulungcoat/" target="_blank">Instagram</a> |
+          <a href="https://www.tiktok.com/@the_rizz_god69?lang=en" target="_blank">Tiktok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Valorant Fansite</p>
+        <p>&copy; 2024 Valorant Fansite. Not affiliated with Riot Games.</p>
     </footer>
 </body>
 </html>
